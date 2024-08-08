@@ -23,8 +23,10 @@ abstract class Model {
 
         // a modifier en tant que requete prepare
 
-        $query = "SELECT * FROM $this->table where id = $id";
-        $statement = $pdo->query($query);
+        $query = "SELECT * FROM $this->table where id = :id";
+        $statement = $pdo->prepare($query);
+        $statement->bindParam(':id', $id, PDO::PARAM_INT);
+        $statement->execute();
 
         // 3. statement qui formate les données sous forme de tableau
         $books = $statement->fetch(PDO::FETCH_ASSOC); 
@@ -32,6 +34,6 @@ abstract class Model {
         return $books;
     }
 
-    // faire la partie delete et create
+    // faire la partie delete 
 
 } 
