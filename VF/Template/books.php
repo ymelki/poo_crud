@@ -3,7 +3,7 @@
 <?php
 // ma variable $books qui contient les livres elle est issue du model
 // qui va recuperer les données de la B.D
-foreach ($books as $book){
+foreach ($array as $book){
     ?>
     <hr>
     Livre : <a href="index.php?page=book&id=<?=$book['id']?>">
