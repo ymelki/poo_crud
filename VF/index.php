@@ -45,8 +45,8 @@
  if ($page==="categories"){
     echo "je suis dans la page catégories!";
     include __DIR__."/Controller/CategoryController.php";
-    $categorieController=new CategoryController();
-    $categorieController->findAll();
+    $categorieController=new CategorieController();
+    $categorieController->findAll("categories");
 
  }
 
