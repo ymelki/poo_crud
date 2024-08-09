@@ -33,8 +33,21 @@
     //include __DIR__."/Template/books.php";
  }
 
+/**
+ * Méthode
+ * 1. Router : on test l'url /index.php?page=categories
+ * 2. Controller : on inclut le controlleur et on verifie avec un echo
+ *                 on a mis un echo dans une méthode de la classe et on a teste
+ * 3. model : les données
+ * 4. Tempalate : la vue
+ */
+
  if ($page==="categories"){
     echo "je suis dans la page catégories!";
+    include __DIR__."/Controller/CategoryController.php";
+    $categorieController=new CategoryController();
+    $categorieController->findAll();
+
  }
 
  if ($page==="authors"){
@@ -46,6 +59,19 @@
     $errorController=new ErrorController();
     $errorController->displayError();
  }
+// index.php?page=book.php&id=2
+if ($page==="book"){
+    echo "testbook";
+    include __DIR__."/Controller/BookController.php";
+    $controlleur=new BookController();
+    $id=$_GET["id"];
+    echo $id;
+    $controlleur->findBy($id);
 
 
+}
 
+// index.php?page=supprimer.php&id=2
+if ($page==="supprimer"){
+    echo "testsupprimer";
+}

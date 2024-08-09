@@ -6,10 +6,10 @@
 foreach ($books as $book){
     ?>
     <hr>
-    Livre : <a href="book.php?id=<?=$book['id']?>">
+    Livre : <a href="index.php?page=book&id=<?=$book['id']?>">
         <?=$book['name']?>
     </a> -
-    <a href="supprimer.php?id=<?=$book['id']?>">
+    <a href="index.php?page=supprimer.php&id=<?=$book['id']?>">
         supprimer
     </a>
     <?php
