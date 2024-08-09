@@ -67,8 +67,6 @@ if ($page==="book"){
     $id=$_GET["id"];
     echo $id;
     $controlleur->findBy($id);
-
-
 }
 
 // index.php?page=supprimer.php&id=2
