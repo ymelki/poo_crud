@@ -29,7 +29,7 @@
     // le routeur n'appelle la vue il appelle le controlleur
     include __DIR__."/Controller/BookController.php";
     $controlleur=new BookController();
-    $controlleur->findAll();
+    $controlleur->findAll("books");
     //include __DIR__."/Template/books.php";
  }
 
@@ -66,7 +66,7 @@ if ($page==="book"){
     $controlleur=new BookController();
     $id=$_GET["id"];
     echo $id;
-    $controlleur->findBy($id);
+    $controlleur->findBy($id,"book");
 }
 
 // index.php?page=supprimer.php&id=2
